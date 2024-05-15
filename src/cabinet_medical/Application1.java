@@ -1,9 +1,9 @@
-package cabinet_dentaire;
+package cabinet_medical;
 
 import java.awt.EventQueue;
 import java.awt.Image;
 import java.awt.Label;
-//import java.awt.image.*;
+import java.awt.image.*;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -57,7 +57,7 @@ public class Application1 {
 	private void initialize() {
 		
 		frame = new JFrame();
-		frame.setBounds(100, 100, 839, 514);
+		frame.setBounds(100, 100, 840, 519);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		 
 		try {
@@ -72,7 +72,7 @@ public class Application1 {
 		}
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("QuickSmileCare");
+		JLabel lblNewLabel = new JLabel("MedicalCabinet ");
 		lblNewLabel.setBounds(306, 13, 269, 42);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBackground(new Color(0, 128, 192));
@@ -114,6 +114,7 @@ public class Application1 {
 		frame.getContentPane().add(image1);
 		
 		JButton New_account = new JButton("sign up");
+		New_account.setForeground(new Color(255, 255, 255));
 		New_account.setBounds(125, 313, 263, 32);
 		New_account.setBackground(new Color(0, 128, 192));
 		New_account.setFont(new Font("Tahoma", Font.BOLD, 15));
@@ -124,6 +125,14 @@ public class Application1 {
 		frame.getContentPane().add(New_account);
 		
 		JButton FG_pswrd = new JButton("Forget Password");
+		FG_pswrd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Application2 App2 = new Application2();
+				App2.Application2.setVisible(true);
+				frame.dispose();
+			}
+		});
+		FG_pswrd.setForeground(new Color(255, 255, 255));
 		FG_pswrd.setFont(new Font("Tahoma", Font.BOLD, 14));
 		FG_pswrd.setBackground(new Color(0, 128, 192));
 		FG_pswrd.setBounds(15, 375, 378, 32);
@@ -143,6 +152,7 @@ public class Application1 {
 		
 		
 		JButton Bt_connexion = new JButton("Log in ");
+		Bt_connexion.setForeground(new Color(255, 255, 255));
 		Bt_connexion.setBackground(new Color(0, 128, 192));
 		Bt_connexion.setFont(new Font("Tahoma", Font.BOLD, 14));
 		frame.getContentPane().add(Bt_connexion);
@@ -150,7 +160,10 @@ public class Application1 {
 		Bt_connexion.setIcon(new ImageIcon(Application1.class.getResource("/images/connexion .png")));
 		Bt_connexion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 
+				Application4 secritaire = new Application4();
+				secritaire.Application4.setVisible(true);
+				frame.dispose();
+				
 				String Nom_utilisateur=user_name.getText();
 				String mail=email.getText();
 				String mot_pasee=mot_de_passe.getText();
