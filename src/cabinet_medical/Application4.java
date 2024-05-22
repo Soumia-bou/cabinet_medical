@@ -75,6 +75,14 @@ public class Application4 {
 		Application4.getContentPane().add(nouveau);
 		
 		JButton view = new JButton("Old");
+		view.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Application7 old_btn = new Application7();
+				old_btn.Application7.setVisible(true);
+				Application4.dispose();
+				
+			}
+		});
 		view.setForeground(new Color(255, 255, 255));
 		view.setBackground(new Color(0, 128, 192));
 		view.setFont(new Font("Tahoma", Font.BOLD, 15));
