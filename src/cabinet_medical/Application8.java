@@ -21,7 +21,7 @@ import java.awt.event.ActionEvent;
 
 public class Application8 {
 
-	private JFrame frame;
+	private JFrame Application8;
 	private JTable table;
 	private JTextField Date_hour;
 	private JTextField Fullname;
@@ -35,7 +35,7 @@ public class Application8 {
 			public void run() {
 				try {
 					Application8 window = new Application8();
-					window.frame.setVisible(true);
+					window.Application8.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -54,14 +54,14 @@ public class Application8 {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 883, 508);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		Application8 = new JFrame();
+		Application8.setBounds(100, 100, 883, 508);
+		Application8.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Application8.getContentPane().setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(32, 24, 548, 319);
-		frame.getContentPane().add(scrollPane);
+		Application8.getContentPane().add(scrollPane);
 		
 		
 		table = new JTable();
@@ -89,37 +89,44 @@ public class Application8 {
 		NAME.setForeground(Color.GRAY);
 		NAME.setFont(new Font("Tahoma", Font.BOLD, 15));
 		NAME.setBounds(600, 98, 78, 19);
-		frame.getContentPane().add(NAME);
+		Application8.getContentPane().add(NAME);
 		
 		JLabel date_h = new JLabel("date/hour");
 		date_h.setForeground(Color.GRAY);
 		date_h.setFont(new Font("Tahoma", Font.BOLD, 15));
 		date_h.setBounds(600, 152, 78, 19);
-		frame.getContentPane().add(date_h);
+		Application8.getContentPane().add(date_h);
 		
 		Date_hour = new JTextField();
 		Date_hour.setColumns(10);
 		Date_hour.setBounds(688, 150, 156, 26);
-		frame.getContentPane().add(Date_hour);
+		Application8.getContentPane().add(Date_hour);
 		
 		Fullname = new JTextField();
 		Fullname.setColumns(10);
 		Fullname.setBounds(688, 96, 156, 26);
-		frame.getContentPane().add(Fullname);
+		Application8.getContentPane().add(Fullname);
 		
 		JButton btnNewButton = new JButton("Start consultation");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Application9 consultation = new Application9();
+				consultation.Application9.setVisible(true);
+				Application8.dispose();
+			}
+		});
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setBackground(new Color(0, 0, 255));
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnNewButton.setBounds(643, 228, 185, 40);
-		frame.getContentPane().add(btnNewButton);
+		Application8.getContentPane().add(btnNewButton);
 		
 		JButton btnDeleteConsultation = new JButton("Delete consultation ");
 		btnDeleteConsultation.setBackground(new Color(128, 0, 0));
 		btnDeleteConsultation.setForeground(new Color(255, 255, 255));
 		btnDeleteConsultation.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnDeleteConsultation.setBounds(643, 303, 185, 40);
-		frame.getContentPane().add(btnDeleteConsultation);
+		Application8.getContentPane().add(btnDeleteConsultation);
 		
 		JButton addition = new JButton("ADD");
 		addition.addActionListener(new ActionListener() {
@@ -147,7 +154,7 @@ public class Application8 {
 		addition.setFont(new Font("Tahoma", Font.BOLD, 15));
 		addition.setBackground(new Color(139, 0, 139));
 		addition.setBounds(72, 373, 89, 36);
-		frame.getContentPane().add(addition);
+		Application8.getContentPane().add(addition);
 		
 		JButton btnClear = new JButton("Clear");
 		btnClear.addActionListener(new ActionListener() {
@@ -160,7 +167,7 @@ public class Application8 {
 		btnClear.setFont(new Font("Tahoma", Font.BOLD, 15));
 		btnClear.setBackground(new Color(0, 0, 128));
 		btnClear.setBounds(189, 373, 89, 36);
-		frame.getContentPane().add(btnClear);
+		Application8.getContentPane().add(btnClear);
 		
 		JButton btnUpdate = new JButton("Update");
 		btnUpdate.addActionListener(new ActionListener() {
@@ -181,7 +188,7 @@ public class Application8 {
 		btnUpdate.setFont(new Font("Tahoma", Font.BOLD, 15));
 		btnUpdate.setBackground(new Color(47, 79, 79));
 		btnUpdate.setBounds(384, 373, 89, 36);
-		frame.getContentPane().add(btnUpdate);
+		Application8.getContentPane().add(btnUpdate);
 		
 		JButton btnDelete = new JButton("Delete ");
 		btnDelete.addActionListener(new ActionListener() {
@@ -200,7 +207,7 @@ public class Application8 {
 		btnDelete.setFont(new Font("Tahoma", Font.BOLD, 15));
 		btnDelete.setBackground(new Color(139, 0, 0));
 		btnDelete.setBounds(498, 373, 89, 36);
-		frame.getContentPane().add(btnDelete);
+		Application8.getContentPane().add(btnDelete);
 	}
 
 }

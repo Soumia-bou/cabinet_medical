@@ -168,16 +168,7 @@ public class Application1 {
 				String mail=email.getText();
 				String mot_pasee=mot_de_passe.getText();
 				
-				//System.out.println(Nom_util+"-"+mot_pasee+"-"+prof);
-				String query="INSERT INTO interface values('"+Nom_utilisateur+"','"+mail+"','"+mot_pasee+"')";	
-				try {
-					statement=connection.createStatement();
-					statement.execute(query); 
-				 //JOptionPane.showMessageDialog(Bt_connexion,"l'utilisteur a bien ete insere");
-					
-				} catch (Exception e1) {
-					e1.printStackTrace();
-				}
+				
 				
 			}
 		});

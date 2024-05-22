@@ -70,8 +70,8 @@ public class Application4 {
 		nouveau.setFont(new Font("Tahoma", Font.BOLD, 15));
 		nouveau.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Application5 nouv = new Application5();
-				nouv.Application5.setVisible(true);
+				Application9 nouv = new Application9();
+				nouv.Application9.setVisible(true);
 				Application4.dispose();
 			}
 		});
