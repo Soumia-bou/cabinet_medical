@@ -55,6 +55,10 @@ public class Application4 {
 		rendez_vous.setFont(new Font("Tahoma", Font.BOLD, 15));
 		rendez_vous.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Application3 appointment_btn = new Application3();
+				appointment_btn.Application3.setVisible(true);
+				Application4.dispose();
+				
 			}
 		});
 		rendez_vous.setBounds(152, 61, 148, 38);
